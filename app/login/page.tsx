@@ -8,6 +8,7 @@ import { saveSession } from "@/lib/auth";
 import { AVATAR_OPTIONS } from "@/lib/avatar";
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import AnonimusIcon from "@/components/AnonimusIcon";
 
 // Avatares estables (DiceBear): se guardan en la BD y no caducan.
 const AVATAR_POOL = AVATAR_OPTIONS;
@@ -43,7 +44,7 @@ export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [commitment, setCommitment] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  
+
   // Toast notifications
   const [toast, setToast] = useState<{ message: string; type: "success" | "error" | null }>({
     message: "",
@@ -82,25 +83,25 @@ export default function LoginPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Validation
     if (!alias.trim()) {
       showToast("Por favor, introduce un alias o apodo.", "error");
       return;
     }
-    
+
     if (password.length < 8) {
       showToast("La contraseña debe tener al menos 8 caracteres.", "error");
       return;
     }
-    
+
     if (activeTab === "register" && !commitment) {
       showToast("Debes comprometerte con el acuerdo ético de respeto.", "error");
       return;
     }
 
     setIsLoading(true);
-    
+
     // Simulate API request
     // setTimeout(() => {
     //   setIsLoading(false);
@@ -158,10 +159,11 @@ export default function LoginPage() {
       {/* Persistent top header */}
       <header className="fixed top-0 w-full z-50 bg-[#f7f9fc]/80 backdrop-blur-md border-b border-outline-variant/10">
         <div className="flex justify-between items-center px-6 h-16 w-full max-w-screen-xl mx-auto">
-          <div className="text-2xl font-bold text-[#8E94F2] font-headline tracking-tight">
-            Anonimus
+          <div className="flex items-center gap-2 text-2xl font-bold text-[#8E94F2] font-headline tracking-tight">
+            <span>Anonimus</span>
+            <AnonimusIcon className="h-8 w-8 shrink-0" />
           </div>
-          <button 
+          <button
             type="button"
             onClick={() => showToast("Anonimus es un espacio seguro y anónimo de salud mental y acompañamiento.", "success")}
             className="text-[#8E94F2] hover:opacity-80 transition-opacity scale-95 duration-300 ease-out cursor-pointer flex items-center justify-center p-2 rounded-full hover:bg-[#8E94F2]/10"
@@ -175,12 +177,11 @@ export default function LoginPage() {
       <main className="pt-24 pb-12 px-6 flex flex-col items-center justify-center min-h-screen max-w-2xl mx-auto relative z-10">
         {/* Animated Toast Notification */}
         {toast.type && (
-          <div 
-            className={`fixed top-20 right-6 left-6 md:left-auto md:w-96 z-50 p-4 rounded-xl shadow-lg border backdrop-blur-md transform translate-y-0 transition-all duration-300 flex items-center gap-3 ${
-              toast.type === "success" 
-                ? "bg-emerald-500/25 border-emerald-500/50 text-emerald-950" 
+          <div
+            className={`fixed top-20 right-6 left-6 md:left-auto md:w-96 z-50 p-4 rounded-xl shadow-lg border backdrop-blur-md transform translate-y-0 transition-all duration-300 flex items-center gap-3 ${toast.type === "success"
+                ? "bg-emerald-500/25 border-emerald-500/50 text-emerald-950"
                 : "bg-error-container/20 border-error-container/50 text-on-error-container"
-            }`}
+              }`}
           >
             <span className="material-symbols-outlined shrink-0 text-2xl">
               {toast.type === "success" ? "check_circle" : "error"}
@@ -208,11 +209,10 @@ export default function LoginPage() {
                 setActiveTab("register");
                 showToast("Cambiado a modo Registro", "success");
               }}
-              className={`flex-1 py-2 px-4 rounded-full text-sm font-semibold transition-all duration-300 cursor-pointer ${
-                activeTab === "register"
+              className={`flex-1 py-2 px-4 rounded-full text-sm font-semibold transition-all duration-300 cursor-pointer ${activeTab === "register"
                   ? "bg-surface-container-lowest text-primary shadow-[0px_4px_10px_rgba(45,51,56,0.05)]"
                   : "text-on-surface-variant hover:text-on-surface font-medium"
-              }`}
+                }`}
             >
               Registrarse
             </button>
@@ -222,11 +222,10 @@ export default function LoginPage() {
                 setActiveTab("login");
                 showToast("Cambiado a modo Inicio de Sesión", "success");
               }}
-              className={`flex-1 py-2 px-4 rounded-full text-sm font-semibold transition-all duration-300 cursor-pointer ${
-                activeTab === "login"
+              className={`flex-1 py-2 px-4 rounded-full text-sm font-semibold transition-all duration-300 cursor-pointer ${activeTab === "login"
                   ? "bg-surface-container-lowest text-primary shadow-[0px_4px_10px_rgba(45,51,56,0.05)]"
                   : "text-on-surface-variant hover:text-on-surface font-medium"
-              }`}
+                }`}
             >
               Iniciar Sesión
             </button>
@@ -235,8 +234,8 @@ export default function LoginPage() {
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Privacy info banner */}
             <div className="bg-primary-container/20 rounded-lg p-3 px-4 border border-primary-container/50 flex flex-row items-center gap-4 text-left transition-all duration-500 ease-in-out">
-              <span 
-                className="material-symbols-outlined text-primary text-2xl shrink-0" 
+              <span
+                className="material-symbols-outlined text-primary text-2xl shrink-0"
                 style={{ fontVariationSettings: "'FILL' 1" }}
               >
                 privacy_tip
@@ -252,12 +251,11 @@ export default function LoginPage() {
             </div>
 
             {/* Anonymous avatar selection (Only for registration mode) */}
-            <div 
-              className={`space-y-3 transition-all duration-300 ${
-                activeTab === "register" 
-                  ? "opacity-100 max-h-40 overflow-visible" 
+            <div
+              className={`space-y-3 transition-all duration-300 ${activeTab === "register"
+                  ? "opacity-100 max-h-40 overflow-visible"
                   : "opacity-0 max-h-0 overflow-hidden pointer-events-none"
-              }`}
+                }`}
             >
               <label className="block text-sm font-semibold text-on-surface text-center">
                 Elige tu avatar anónimo
@@ -272,17 +270,16 @@ export default function LoginPage() {
                         setSelectedAvatarIdx(idx);
                         showToast(`Avatar ${idx + 1} seleccionado`, "success");
                       }}
-                      className={`rounded-full bg-surface-container-lowest flex items-center justify-center shadow-sm relative overflow-hidden transition-all duration-300 cursor-pointer ${
-                        isSelected 
-                          ? "w-14 h-14 border-2 border-primary scale-105 opacity-100" 
+                      className={`rounded-full bg-surface-container-lowest flex items-center justify-center shadow-sm relative overflow-hidden transition-all duration-300 cursor-pointer ${isSelected
+                          ? "w-14 h-14 border-2 border-primary scale-105 opacity-100"
                           : "w-12 h-12 border border-outline-variant/30 opacity-70 hover:opacity-100 hover:scale-105 hover:border-primary/50"
-                      }`}
+                        }`}
                       type="button"
                     >
-                      <img 
-                        alt={`Avatar ${idx + 1}`} 
-                        className="w-full h-full object-cover" 
-                        src={avatarUrl} 
+                      <img
+                        alt={`Avatar ${idx + 1}`}
+                        className="w-full h-full object-cover"
+                        src={avatarUrl}
                       />
                     </button>
                   );
@@ -359,12 +356,11 @@ export default function LoginPage() {
             </div>
 
             {/* Ethical commitment checkbox (Only for registration mode) */}
-            <div 
-              className={`flex items-start gap-3 px-1 pt-1 transition-all duration-300 ${
-                activeTab === "register" 
-                  ? "opacity-100 max-h-24 overflow-visible" 
+            <div
+              className={`flex items-start gap-3 px-1 pt-1 transition-all duration-300 ${activeTab === "register"
+                  ? "opacity-100 max-h-24 overflow-visible"
                   : "opacity-0 max-h-0 overflow-hidden pointer-events-none"
-              }`}
+                }`}
             >
               <div className="flex items-center h-6">
                 <input
@@ -375,8 +371,8 @@ export default function LoginPage() {
                   type="checkbox"
                 />
               </div>
-              <label 
-                className="text-xs text-on-surface-variant leading-tight cursor-pointer select-none" 
+              <label
+                className="text-xs text-on-surface-variant leading-tight cursor-pointer select-none"
                 htmlFor="commitment"
               >
                 Me comprometo a mantener un ambiente de respeto, apoyando a otros y evitando juzgar las situaciones compartidas en la comunidad.
