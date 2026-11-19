@@ -58,7 +58,7 @@ export default function ChallengesPage() {
     };
 
     return (
-        <div className="bg-surface text-on-surface min-h-screen relative overflow-x-hidden font-body bg-[#f7f9fc]">
+        <div className="bg-surface text-on-surface min-h-screen relative overflow-x-hidden font-body">
             <style dangerouslySetInnerHTML={{
                 __html: `
         body, html, [class*="font-body"], .font-body {
@@ -83,7 +83,7 @@ export default function ChallengesPage() {
         }
 
         .progress-gradient {
-            background: linear-gradient(90deg, #7049b3, #006974, #7049b3);
+            background: linear-gradient(90deg, var(--color-primary), var(--color-secondary), var(--color-primary));
             background-size: 200% 200%;
             animation: gradient-move 3s ease infinite;
         }
@@ -116,7 +116,7 @@ export default function ChallengesPage() {
             left: -10%;
             width: 40vw;
             height: 40vw;
-            background-color: #d0b4ff;
+            background-color: var(--color-primary-200);
         }
 
         .blob-2 {
@@ -124,7 +124,7 @@ export default function ChallengesPage() {
             right: -10%;
             width: 50vw;
             height: 50vw;
-            background-color: #93f1ff;
+            background-color: var(--color-info-200);
         }
 
         .blob-3 {
@@ -132,7 +132,7 @@ export default function ChallengesPage() {
             left: 30%;
             width: 30vw;
             height: 30vw;
-            background-color: #fff176;
+            background-color: var(--color-warning-300);
             opacity: 0.3;
         }
 
@@ -308,7 +308,7 @@ export default function ChallengesPage() {
                                                         {reto.titulo}
                                                     </span>
                                                     {isDone ? (
-                                                        <span className="text-[10px] text-primary bg-primary-container px-2 py-0.5 rounded-full font-headline shrink-0">
+                                                        <span className="text-[10px] text-on-primary-container bg-primary-container px-2 py-0.5 rounded-full font-headline shrink-0">
                                                             {completedAt ? `Completado el ${formatDate(completedAt)}` : "Completado"}
                                                         </span>
                                                     ) : (
@@ -421,7 +421,7 @@ export default function ChallengesPage() {
             </div>
 
             {/* Botón de emergencia flotante (SOS) */}
-            <button className="fixed bottom-28 md:bottom-12 right-6 md:right-12 z-50 flex items-center gap-3 bg-error text-on-error px-6 py-4 rounded-full shadow-[0px_10px_30px_rgba(172,49,73,0.3)] hover:scale-105 hover:bg-error-dim transition-all duration-300 group">
+            <button className="fixed bottom-28 md:bottom-12 right-6 md:right-12 z-50 flex items-center gap-3 bg-error text-on-error px-6 py-4 rounded-full shadow-[0px_10px_30px_rgba(255,61,96,0.3)] hover:scale-105 hover:bg-error-dim transition-all duration-300 group">
                 <span className="material-symbols-outlined animate-pulse" style={{ fontVariationSettings: "'FILL' 1" }}>
                     sos
                 </span>

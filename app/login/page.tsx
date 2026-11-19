@@ -157,16 +157,16 @@ export default function LoginPage() {
       <div className="blob-2"></div>
 
       {/* Persistent top header */}
-      <header className="fixed top-0 w-full z-50 bg-[#f7f9fc]/80 backdrop-blur-md border-b border-outline-variant/10">
+      <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-outline-variant/10">
         <div className="flex justify-between items-center px-6 h-16 w-full max-w-screen-xl mx-auto">
-          <div className="flex items-center gap-2 text-2xl font-bold text-[#8E94F2] font-headline tracking-tight">
+          <div className="flex items-center gap-2 text-2xl font-bold text-primary font-headline tracking-tight">
             <span>Anonimus</span>
             <AnonimusIcon className="h-8 w-8 shrink-0" />
           </div>
           <button
             type="button"
             onClick={() => showToast("Anonimus es un espacio seguro y anónimo de salud mental y acompañamiento.", "success")}
-            className="text-[#8E94F2] hover:opacity-80 transition-opacity scale-95 duration-300 ease-out cursor-pointer flex items-center justify-center p-2 rounded-full hover:bg-[#8E94F2]/10"
+            className="text-primary hover:opacity-80 transition-opacity scale-95 duration-300 ease-out cursor-pointer flex items-center justify-center p-2 rounded-full hover:bg-primary/10"
           >
             <span className="material-symbols-outlined text-2xl">help_outline</span>
           </button>
@@ -383,7 +383,7 @@ export default function LoginPage() {
             <button
               id="submit-btn"
               disabled={isLoading}
-              className="w-full bg-gradient-to-r from-primary to-primary-dim text-white font-headline font-bold text-base py-3.5 rounded-full shadow-[0px_8px_15px_rgba(112,73,179,0.2)] hover:shadow-[0px_12px_20px_rgba(112,73,179,0.3)] hover:scale-[1.02] disabled:scale-100 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 relative overflow-hidden group mt-4 cursor-pointer"
+              className="w-full bg-gradient-to-r from-primary to-primary-dim text-white font-headline font-bold text-base py-3.5 rounded-full shadow-[0px_8px_15px_rgba(92,150,251,0.2)] hover:shadow-[0px_12px_20px_rgba(92,150,251,0.3)] hover:scale-[1.02] disabled:scale-100 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 relative overflow-hidden group mt-4 cursor-pointer"
               type="submit"
             >
               <span className="relative z-10 flex items-center justify-center gap-2">
