@@ -333,7 +333,7 @@ export default function CommunitiesPage() {
                             </button>
                             <button
                                 onClick={handleLogout}
-                                className="flex-1 px-6 py-3 rounded-full bg-error text-on-error hover:bg-error/90 transition-colors duration-300 font-headline font-semibold shadow-[0px_10px_20px_rgba(255,61,96,0.2)] hover:scale-[1.02]"
+                                className="flex-1 px-6 py-3 rounded-full bg-error text-on-error hover:bg-error/90 transition-colors duration-300 font-headline font-semibold shadow-[0px_10px_20px_rgba(184,73,73,0.2)] hover:scale-[1.02]"
                             >
                                 Cerrar Sesión
                             </button>

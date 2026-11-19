@@ -188,7 +188,7 @@ export default function PrincipalPage() {
                             proceso y encuentra la fuerza en la comunidad.
                         </p>
                         <div className="flex flex-wrap gap-4 pt-4 reveal delay-300">
-                            <button onClick={() => router.push("/challenges")} className="bg-gradient-to-r from-primary to-primary-dim text-on-primary px-8 py-4 rounded-full font-headline font-semibold shadow-[0px_10px_20px_rgba(92,150,251,0.2)] hover:scale-[1.02] hover:shadow-[0px_15px_30px_rgba(92,150,251,0.4)] transition-all duration-300 ease-out">
+                            <button onClick={() => router.push("/challenges")} className="bg-gradient-to-r from-primary to-primary-dim text-on-primary px-8 py-4 rounded-full font-headline font-semibold shadow-[0px_10px_20px_rgba(112,73,179,0.2)] hover:scale-[1.02] hover:shadow-[0px_15px_30px_rgba(112,73,179,0.4)] transition-all duration-300 ease-out">
                                 Comenzar mi camino
                             </button>
                             <button onClick={() => router.push("/communities")} className="bg-transparent text-on-surface border border-outline-variant/30 px-8 py-4 rounded-full font-headline font-semibold hover:bg-surface-container-low transition-colors duration-300 ease-out">
@@ -352,7 +352,7 @@ export default function PrincipalPage() {
                             </button>
                             <button
                                 onClick={handleLogout}
-                                className="flex-1 px-6 py-3 rounded-full bg-primary text-on-primary hover:bg-primary/90 transition-colors duration-300 font-headline font-semibold shadow-[0px_10px_20px_rgba(92,150,251,0.2)] hover:scale-[1.02]"
+                                className="flex-1 px-6 py-3 rounded-full bg-primary text-on-primary hover:bg-primary/90 transition-colors duration-300 font-headline font-semibold shadow-[0px_10px_20px_rgba(112,73,179,0.2)] hover:scale-[1.02]"
                             >
                                 Cerrar Sesión
                             </button>

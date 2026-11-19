@@ -27,7 +27,7 @@ export default function TableroExperienciasPage() {
     }, []);
 
     return (
-        <div className="antialiased min-h-screen flex flex-col relative overflow-x-hidden bg-background text-on-background font-body">
+        <div className="antialiased min-h-screen flex flex-col relative overflow-x-hidden bg-[#f7f9fc] text-[#2d3338] font-body">
             <style dangerouslySetInnerHTML={{
                 __html: `
         .material-symbols-outlined {
@@ -56,7 +56,7 @@ export default function TableroExperienciasPage() {
             right: -5%;
             width: 50vw;
             height: 50vw;
-            background: radial-gradient(circle, rgba(198, 204, 254, 0.4) 0%, rgba(247, 249, 252, 0) 70%);
+            background: radial-gradient(circle, rgba(147, 241, 255, 0.4) 0%, rgba(247, 249, 252, 0) 70%);
             border-radius: 50%;
         }
 
@@ -66,7 +66,7 @@ export default function TableroExperienciasPage() {
             left: -10%;
             width: 60vw;
             height: 60vw;
-            background: radial-gradient(circle, rgba(181, 215, 253, 0.3) 0%, rgba(247, 249, 252, 0) 70%);
+            background: radial-gradient(circle, rgba(208, 180, 255, 0.3) 0%, rgba(247, 249, 252, 0) 70%);
             border-radius: 50%;
         }
       `}} />
